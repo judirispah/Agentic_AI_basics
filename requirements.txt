@@ -1,2 +1,5 @@
 ipykernel
 pydantic
+langgraph
+langchain_google_genai
+dotenv 
