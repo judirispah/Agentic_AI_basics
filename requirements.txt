@@ -3,3 +3,9 @@ pydantic
 langgraph
 langchain_google_genai
 dotenv 
+langchain_huggingface
+sentence_transformers
+langchain_community
+chromadb
+protobuf
+faiss
