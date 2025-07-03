@@ -8,4 +8,6 @@ sentence_transformers
 langchain_community
 chromadb
 protobuf
-faiss
+pypdf
+duckduckgo-search
+langchain_tavily
