@@ -11,3 +11,4 @@ protobuf
 pypdf
 duckduckgo-search
 langchain_tavily
+langchain_groq 
