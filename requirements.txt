@@ -13,3 +13,4 @@ duckduckgo-search
 langchain_tavily
 langchain_groq 
 yfinance
+mcp
