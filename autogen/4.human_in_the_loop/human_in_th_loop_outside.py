@@ -11,8 +11,9 @@ from autogen_agentchat.ui import Console
 import os
 
 load_dotenv()
-api_key = os.getenv('OPENAI_API_KEY')
-model_client = OpenAIChatCompletionClient(model='gpt-4o')
+model_client=OpenAIChatCompletionClient(model="gemini-2.5-flash",
+    api_key="AIzaSyBg0l_7_E5OohH2ZxY6gMikQo2WNq3cl00",)
+
 
 
 assistant = AssistantAgent(
