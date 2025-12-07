@@ -11,14 +11,26 @@ from autogen_agentchat.ui import Console
 import os
 
 model_client=OpenAIChatCompletionClient(model="gemini-2.5-flash",
-    api_key="AIzaSyDJtrGkMQcNF3HhPvPOws5xq_XtT4AgRis",)
+    api_key="AIzaSyB4V4UF7nqItjx1-0pMhH58CibeCUe40V4",)
+
 
 assistant = AssistantAgent(
-    name='Assistant',
-    description='you are a great assistant',
+    name="template_creator",
+    description="Agent that creates clean policy skeleton templates (only main headings)",
     model_client=model_client,
-    system_message='You are a really helpful assistant who help on the task given.'
+    system_message=(
+        "You are a policy template designer. "
+        "For every request, generate ONLY the high-level skeleton of the policy. "
+        "Output STRICTLY the main headings — no explanations, no details. "
+        "Structure must follow standard policy document format "
+        "Your output should always be:\n"
+        "- Clean\n"
+        "- Numbered\n"
+        "- Professional\n"
+        "Do not add examples, notes, sub headings or subtext unless asked."
+    ),
 )
+
 
 user_proxy_agent = UserProxyAgent(
     name ='UserProxy',
@@ -35,7 +47,7 @@ team = RoundRobinGroupChat(
     max_turns=10
 )
 
-stream = team.run_stream(task = 'Write a great poem about india?')
+stream = team.run_stream(task = 'generate a password management policy')
 
 async def main():
     await Console(stream)
